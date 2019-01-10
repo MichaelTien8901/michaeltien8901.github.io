@@ -18,7 +18,7 @@ date: 2019-01-06
 
 ## WARNING: THE RESULT ONLY FOR STM32F072   
 
-   For different brand and series MCU(F1, F3, F4 for example), the result maybe be different. 
+   For different brand and series MCU(F1, F3, F4 for example), the result may be different. 
    
 ## Tests
   * STM32F072 SPI Settings
@@ -139,7 +139,7 @@ Why the MSB of last 4 byes?  We can guess how the hardware works.
   The exception for 3 byte transmit might be done by first load two bytes and then one byte to transmit.  That might explain MOSI IDLE is the MSB of last byte.
 
 
-## How to manipulation MOSI Idle state
+## How to Control MOSI Idle state
 
 According to previous finding, to setup MOSI IDLE is pretty easy.  At most send 4 more bytes, I can setup the MOSI IDLE to any state I want.  For some situation, I only need to tweak data a little bit without sending more bytes.
 
