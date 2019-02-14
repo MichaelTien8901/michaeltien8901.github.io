@@ -17,8 +17,9 @@ and hopefully you see the path to your swap partition listed there. If not chanc
 Filename Type Size Used Priority
 /dev/dm-1 partition 2676732 73380 -1
 ```
-```shell
+
 Then Find the uuid of the device
+
 ```shell
 $ cd /dev/disk/by-uuid
 $ ll
@@ -27,6 +28,7 @@ drwxr-xr-x 2 root root 160 Feb 13 23:17 ./
 drwxr-xr-x 8 root root 160 Feb 13 23:17 ../
 lrwxrwxrwx 1 root root  10 Feb 13 23:17 06af334d-676b-4b46-88ec-30105b980e1d -> ../../dm-1
 ```
+```shell
 gksu gedit /etc/default/grub
 ```
 & to pull up the boot loader configuration.
@@ -35,9 +37,11 @@ Look for the line
 GRUB_CMDLINE_LINUX="" 
 ```
 and make sure it looks like this (using your UUID of course).
+
 ```shell
 GRUB_CMDLINE_LINUX="resume=UUID=06af334d-676b-4b46-88ec-30105b980e1d" 
 ```
+
 and save the file 
 ```shell
 sudo update-grub 
