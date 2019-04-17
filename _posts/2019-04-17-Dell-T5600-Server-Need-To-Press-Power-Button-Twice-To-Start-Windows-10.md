@@ -21,7 +21,7 @@ date: 2019-04-17
    problem that only happened in "Shutdown", not in "Restart".  
    
    So the fast start option might also disable the "Shutdown" script defined in group policy.  
-   
- ## Disable Fast Start Option Solve the Shutdown Process problem
+
+## Disable Fast Start Option Solve the Shutdown Process problem
  
    Now the service can be stop properly and shutdown script is running.  
