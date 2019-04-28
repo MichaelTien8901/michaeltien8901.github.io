@@ -4,7 +4,19 @@ title: "Using STM32 SPI for LED Strip WS2812B"
 categories: STM32
 date: 2018-07-19
 ---
+## Introduction
+   This project uses STM32 SPI to drive LED strip with WS2812B(another name is Neopixel LEDs).  If use DMA option, the STM32 MCU is only have to setup and is free to do another task. 
+
+## Source Code Repository 
+
+The repo is at the following link.  
 [https://bitbucket.org/mtien888/stm32-for-ws2812b-using-spi/src/](https://bitbucket.org/mtien888/stm32-for-ws2812b-using-spi/src/)
+
+You can get the soource code using 
+```shell
+git clone https://bitbucket.org/mtien888/stm32-for-ws2812b-using-spi/src/ .\neopixel
+
+```
 
 ## Hardware 
 
