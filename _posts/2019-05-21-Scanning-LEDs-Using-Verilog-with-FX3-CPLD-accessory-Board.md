@@ -71,7 +71,9 @@ endmodule
 ```
 
 * MUX2
+
    4 to 1 multiplexer
+
 
 ```verilog
 //////////////////////////////////////////////////////////////////////////////////
@@ -99,9 +101,11 @@ begin
 end
 endmodule
 ```
+
 * Top.v
 
    Top level design combine the 8 LED output and clock
+
 
 ```verilog
 `timescale 1ns / 1ps
