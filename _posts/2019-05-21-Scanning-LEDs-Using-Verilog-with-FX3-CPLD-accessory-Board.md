@@ -19,8 +19,9 @@ date: 2019-05-21
  * PWM 
  
     Create 4 PWM output 
-    
- ```verilog
+
+
+```verilog
  //////////////////////////////////////////////////////////////////////////////////
 // @brief
 //    Generate 4 PWM output.  LED On when LOW, LED Off when High.
@@ -67,10 +68,11 @@ always @ (posedge PCLK) begin
 end
 endmodule
 
- ```
+```
 
 * MUX2
    4 to 1 multiplexer
+
 ```verilog
 //////////////////////////////////////////////////////////////////////////////////
 // @brief
