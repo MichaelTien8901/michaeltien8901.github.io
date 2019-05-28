@@ -33,7 +33,9 @@ Summary as the following
      0x00,                           /* Interface protocol code */
      0x00                            /* Interface descriptor string index */
 ```
-  ### Setup Callback Function 
+
+### Setup Callback Function 
+
   In the CyFxUVCApplnUSBSetupCB() function of the uvc.c file, before the switch case for UVC Class Requests include the following template to handle vendor requests: 
   ```c
      if ((bmReqType & CY_U3P_USB_TYPE_MASK) == CY_U3P_USB_VENDOR_RQT)
