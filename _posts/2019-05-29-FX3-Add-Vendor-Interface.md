@@ -2,6 +2,7 @@
 layout: post
 title: "FX3 Add Vendor Interface"
 date: 2019-05-29
+tags: [FX3, Vendor Command]
 ---
 
 Cypress Community has official document [Vendor Interface in UVC](https://community.cypress.com/docs/DOC-10532).

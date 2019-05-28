@@ -2,6 +2,7 @@
 layout: post
 title: "Extraction Vendor Command From FX3 Boot Options Document"
 date: 2019-05-29
+tags: [FX3, Vendor Command]
 ---
 
 The following extracted from document [Z-USB FX3 Boot Options](http://eng.eewiki.net/app/db_page/get_file.php?docid=55346).
