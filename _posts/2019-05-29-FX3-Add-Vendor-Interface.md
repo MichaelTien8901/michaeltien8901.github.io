@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FX3 Add Vendor Command"
+title: "FX3 Add Vendor Interface"
 date: 2019-05-29
 ---
 
