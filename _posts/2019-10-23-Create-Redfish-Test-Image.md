@@ -27,14 +27,25 @@ Looking for a way to compile your programs for 'ARM' but you happen to be runnin
 $ bitbake -c populate_sdk obmc-phosphor-image
 $ ./tmp/deploy/sdk/openbmc-phosphor-glibc-x86_64-obmc-phosphor-image-armv5e-toolchain-2.1.sh
 ```
+## Get QEMU (OpenBMC version)
+
+   The standard qemu-system-arm doesn't have the machine type palmetto used here.  So we need to get the openbmc version.
+
+```shell
+wget https://openpower.xyz/job/openbmc-qemu-build-merge-x86/lastSuccessfulBuild/artifact/qemu/arm-softmmu/qemu-system-arm
+
+chmod u+x qemu-system-arm
+```
 
 ## Using QEMU
 
 QEMU has a palmetto-bmc machine (as of v2.6.0) which implements the core devices to boot a Linux kernel. OpenBMC also maintains a tree with patches on their way upstream or temporary work-arounds that add to QEMU's capabilities where appropriate.
 
 ```shell
-qemu-system-arm -m 256 -M palmetto-bmc -nographic \
--drive file=<path>/flash-palmetto,format=raw,if=mtd \
+export image_path=~/openbmc2/build/tmp/deploy/images/palmetto
+# use the qemu openbmc version
+./qemu-system-arm -m 256 -M palmetto-bmc -nographic \
+-drive file=${image_path}/flash-palmetto,format=raw,if=mtd \
 -net nic \
 -net user,hostfwd=:127.0.0.1:2222-:22,hostfwd=:127.0.0.1:2443-:443,hostname=qemu \
 ```
@@ -50,6 +61,11 @@ or
 ```shell
 ssh -p 2222 root@localhost
 ```
+
+or using browser
+
+   https://127.0.0.1:2443/redfish/v1
+   
 
 To quit, type Ctrl-a c to switch to the QEMU monitor, and then quit to exit.
 
