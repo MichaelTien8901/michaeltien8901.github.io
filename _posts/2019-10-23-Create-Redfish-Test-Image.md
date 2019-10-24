@@ -43,17 +43,18 @@ QEMU has a palmetto-bmc machine (as of v2.6.0) which implements the core devices
 
 ```shell
 export image_path=~/openbmc2/build/tmp/deploy/images/palmetto
+export host_ip=192.168.30.163
 # use the qemu openbmc version
 ./qemu-system-arm -m 256 -M palmetto-bmc -nographic \
 -drive file=${image_path}/flash-palmetto,format=raw,if=mtd \
 -net nic \
--net user,hostfwd=:127.0.0.1:2222-:22,hostfwd=:127.0.0.1:2443-:443,hostname=qemu \
+-net user,hostfwd=:127.0.0.1:2222-:22,hostfwd=${host_ip}:2443-:443,hostname=qemu \
 ```
 If you get an error you likely need to build QEMU (see the section in this document). If no error and QEMU starts up just change the port when interacting with the BMC...
 
 ```
 curl -c cjar -b cjar -k -H "Content-Type: application/json" \
--X POST https://localhost:2443/login -d "{\"data\": [ \"root\", \"0penBmc\" ] }"
+-X POST https://${host_ip}:2443/login -d "{\"data\": [ \"root\", \"0penBmc\" ] }"
 ```
 
 or
@@ -64,7 +65,7 @@ ssh -p 2222 root@localhost
 
 or using browser
 
-   https://127.0.0.1:2443/redfish/v1
+   https://192.168.30.163:2443/redfish/v1
    
 
 To quit, type Ctrl-a c to switch to the QEMU monitor, and then quit to exit.
