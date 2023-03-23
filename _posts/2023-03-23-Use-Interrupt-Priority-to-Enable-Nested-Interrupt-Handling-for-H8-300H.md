@@ -35,7 +35,7 @@ mask bit. For details see section 5, Interrupt Controller.
 
 * Interrupt Handling with UE = 0
 
-![H8 Interupt Handling](asset/2023-03-23/H8_Interrupt_handling.png)
+![H8 Interupt Handling](/assets/2023-03-23/H8_Interrupt_handling.png)
 
 * Nested Interrupt Handling
   * Setup: SYSCR.UE = 1(Enable UE), IRPB.B3 = 1(SCI0 at high priority).  Timer interrupt use the interrupt priority(low)
