@@ -38,9 +38,11 @@ mask bit. For details see section 5, Interrupt Controller.
 ![H8 Interupt Handling](/assets/2023-03-23/H8_Interrupt_handling.png)
 
 * Nested Interrupt Handling
-  * Setup: SYSCR.UE = 1(Enable UE), IRPB.B3 = 1(SCI0 at high priority).  Timer interrupt use the interrupt priority 0(low) by default.
+  * Setup: `SYSCR.UE` = 1(Enable `UE`), `IRPB.B3` = 1(SCI0 at high priority).  Timer interrupt use the interrupt priority 0(low) by default.
 
-  * Timer handler: set CCR.UI = 0 at first time line.  This will enable nested interrupt for high priority interrupt. CCR is not a regular register that can be accessed in c language as port.  We can use assembly code to use the right instruction to set or clear it.  See the example below.
+  * Timer handler:  
+    set `CCR.UI` = 0 at first line.  This will enable nested interrupt for high priority interrupt.  
+    `CCR` is not a regular register that can be accessed in c language.  We can use assembly code to set or clear it.  See the example below.
   
 ## Solutions
 
