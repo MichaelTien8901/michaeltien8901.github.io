@@ -85,7 +85,7 @@ void DoTimer0Handler(void)
 }
 ```
 
-If no `asm` or `__asm` available, define it as a public function with assembly language.  And call it at the first time of timer handler
+If no `asm` or `__asm` available, define it as a public function with assembly language.  And call it at the first line of timer handler
 
 ```s20
     public clearUI
