@@ -25,7 +25,7 @@ We will create CROP command file yocto-poky to build OpenBMC
 In `~/bin/`, we create the file `yocto-poky` as following,
 
 ```console
-BMC_PROJECT=~/
+OBMC_PROJECT=~/
 docker run --rm -it -v $OBMC_PROJECT:/workdir crops/poky --workdir=/workdir
 ```
 
