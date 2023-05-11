@@ -108,7 +108,7 @@ Two options,
     FLASH_SIZE ?= "131072"
     ```
 
-***Both Build Image Scueessfully***.  We will just use option 2, changes in the `build/conf/local.conf`.
+***Both Build Image Successfully***.  We will just use option 2, changes in the `build/conf/local.conf`.
 
 
 ### Change Machine to "raspberrypi3-64"
@@ -119,7 +119,7 @@ At `build/conf/local.conf`
     MACHINE ??= "raspberrypi3-64" 
 ```
 
-***Build Image Scueessfully***
+***Build Image Successfully***
 
 ### SD card Image Type
 
