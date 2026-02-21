@@ -49,6 +49,18 @@ img {
 }
 
 // ==============================
+// Tech Background Patterns
+// ==============================
+
+// Subtle dot grid on the page body
+body {
+  background-color: $background-color;
+  background-image:
+    radial-gradient(rgba(0, 229, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+// ==============================
 // Hero Section
 // ==============================
 .hero {
@@ -56,7 +68,30 @@ img {
   padding: 56px 0 40px;
   border-bottom: 1px solid $border-color;
   margin-bottom: 40px;
-  background: linear-gradient(180deg, rgba(0, 229, 255, 0.04) 0%, transparent 100%);
+  position: relative;
+  overflow: hidden;
+  // Circuit grid lines + radial glow + gradient overlay
+  background:
+    // Radial glow behind the title
+    radial-gradient(ellipse 600px 300px at 50% 40%, rgba(0, 229, 255, 0.08) 0%, transparent 70%),
+    // Horizontal circuit lines
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(0, 229, 255, 0.04) 59px,
+      rgba(0, 229, 255, 0.04) 60px
+    ),
+    // Vertical circuit lines
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(0, 229, 255, 0.04) 59px,
+      rgba(0, 229, 255, 0.04) 60px
+    ),
+    // Base gradient
+    linear-gradient(180deg, rgba(0, 229, 255, 0.03) 0%, transparent 100%);
 }
 
 .hero-title {
@@ -263,6 +298,54 @@ img {
 
 .post-list > li:last-child {
   border-bottom: none;
+}
+
+// ==============================
+// Footer tech pattern
+// ==============================
+.site-footer {
+  background-color: $surface-color;
+  background-image:
+    // Faint diagonal crosshatch
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 11px,
+      rgba(0, 229, 255, 0.02) 11px,
+      rgba(0, 229, 255, 0.02) 12px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 11px,
+      rgba(0, 229, 255, 0.02) 11px,
+      rgba(0, 229, 255, 0.02) 12px
+    );
+}
+
+// Header tech pattern
+.site-header {
+  background-color: $surface-color;
+  background-image:
+    // Subtle horizontal scan lines
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 229, 255, 0.015) 3px,
+      rgba(0, 229, 255, 0.015) 4px
+    );
+}
+
+// Post content — faint hex-dot pattern in background
+.post-content {
+  background-image:
+    radial-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(167, 139, 250, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px, 30px 30px;
+  background-position: 0 0, 10px 10px;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 // ==============================
