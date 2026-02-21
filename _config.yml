@@ -1,8 +1,9 @@
-title: Michael Tien's Blog
-author: Michael8901
+title: Michael Tien's Bit Workshop
+author: Michael Tien
 email: mtien888@gmail.com
-description: > # this means to ignore newlines until "twitter_username:"
-  This is document site by Michael about project and hobby works.
+description: >
+  Firmware engineer sharing technical guides, open-source projects, and notes
+  on embedded systems, UEFI, OpenBMC, and software development.
 
 # social links
 # twitter_username: none
