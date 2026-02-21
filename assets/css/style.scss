@@ -52,12 +52,63 @@ img {
 // Tech Background Patterns
 // ==============================
 
-// Subtle dot grid on the page body
+// Clean grid lines on the page body (replaces dot grid)
 body {
   background-color: $background-color;
   background-image:
-    radial-gradient(rgba(0, 229, 255, 0.2) 1px, transparent 1px);
-  background-size: 24px 24px;
+    // Vertical grid lines
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 229, 255, 0.06) 0px,
+      rgba(0, 229, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    // Horizontal grid lines
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 229, 255, 0.06) 0px,
+      rgba(0, 229, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 60px
+    );
+}
+
+// Main content area below hero — blueprint-style background
+.page-content {
+  background-image:
+    // Diagonal accent lines (top-left to bottom-right)
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 80px,
+      rgba(0, 229, 255, 0.04) 80px,
+      rgba(0, 229, 255, 0.04) 81px
+    ),
+    // Minor grid subdivisions
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 229, 255, 0.03) 0px,
+      rgba(0, 229, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 229, 255, 0.03) 0px,
+      rgba(0, 229, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+}
+
+// Section blocks — glowing left border + subtle surface tint
+.section {
+  background:
+    linear-gradient(90deg, rgba(0, 229, 255, 0.06) 0%, transparent 30%);
+  border-left: 2px solid rgba(0, 229, 255, 0.2);
+  padding-left: 20px;
+  border-radius: 0 8px 8px 0;
 }
 
 // ==============================
@@ -337,15 +388,10 @@ body {
     );
 }
 
-// Post content — faint hex-dot pattern in background
+// Post content — subtle side accent
 .post-content {
-  background-image:
-    radial-gradient(rgba(0, 229, 255, 0.12) 1px, transparent 1px),
-    radial-gradient(rgba(167, 139, 250, 0.08) 1px, transparent 1px);
-  background-size: 20px 20px, 30px 30px;
-  background-position: 0 0, 10px 10px;
-  padding: 20px;
-  border-radius: 8px;
+  border-left: 2px solid rgba(0, 229, 255, 0.12);
+  padding-left: 20px;
 }
 
 // ==============================
