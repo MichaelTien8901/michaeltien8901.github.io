@@ -1,0 +1,130 @@
+@hostname = localhost
+@port = 7034
+@url = https://{{hostname}}:{{port}}/api/products
+@id = 3
+
+###
+# Get all products
+GET {{url}}
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "id": 4,
+    "name": "Product 4",
+    "price": 45.00
+}
+
+###
+PUT {{url}}
+
+{
+    "id": {{id}},
+    "name": "Product 4",
+    "price": 60.00
+}
+
+
+###
+DELETE {{url}}/{{id}}
+
+#------------------------------------------------------------------------------------
+# Redfish Test, with C2184, AMI Redfish 
+# user:pass is admin:admin
+#------------------------------------------------------------------------------------
+
+
+@hostname = 10.132.225.175
+@url = https://{{hostname}}/redfish/v1
+@user = admin
+@passwd = admin
+
+#----------------------------------------------------
+# Use Basic AUthentication
+#----------------------------------------------------
+
+### 
+# Get Redifsh service, no need password
+GET {{url}}
+
+### 
+# Request chassis
+GET {{url}}/Chassis
+Authorization: Basic {{user}}:{{passwd}}
+
+### 
+# Request chassis/1
+GET {{url}}/Chassis/1
+Authorization: Basic {{user}}:{{passwd}}
+
+### 
+# Request session service
+# @name get_session
+GET {{url}}/SessionService/Sessions
+Authorization: Basic {{user}}:{{passwd}}
+
+#----------------------------------------------------
+# Use Session Management
+#----------------------------------------------------
+
+### 
+# @name login_session
+# Create session
+# return token = response.headers.X-Auth-Token
+# return session_id = resposne.body.$.Id
+
+POST {{url}}/SessionService/Sessions
+Content-Type: application/json
+Authorization: Basic {{user}}:{{passwd}}
+
+{
+	"UserName": "{{user}}",
+	"Password": "{{passwd}}"
+}
+
+### 
+@auth_token = {{login_session.response.headers.X-Auth-Token}}
+@session_id = {{login_session.response.body.$.Id}}
+
+###
+# 
+# Get Session service using session token
+# return ETag = response.headers.ETag
+#
+# @name session_service
+GET {{url}}/SessionService
+X-Auth-Token: {{auth_token}}
+
+###
+@etag = {{session_service.response.headers.ETag}}
+
+### 
+#
+# Get Chassis using session token
+#
+GET {{url}}/Chassis/1
+X-Auth-Token: {{auth_token}}
+
+###
+#
+# Change Session timeout -> 3600
+#    Need Request.Header.If-Match: {{etag}}
+# 
+PATCH {{url}}/SessionService
+X-Auth-Token: {{auth_token}}
+Content-Type: application/json
+If-Match: {{etag}}
+
+{
+  "SessionTimeout": 3600   
+}
+
+###
+# 
+# DELETE a session
+#
+DELETE {{url}}/SessionService/Sessions/{{session_id}}
+X-Auth-Token: {{auth_token}}
+

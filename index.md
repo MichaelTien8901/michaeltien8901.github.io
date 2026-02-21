@@ -1,9 +1,56 @@
 ---
-#
-# By default, content added below the "---" mark will appear in the home page
-# between the top bar and the list of recent posts.
-# To change the home page layout, edit the _layouts/home.html file.
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
 layout: home
+guides:
+  - category: "Firmware & Embedded"
+    items:
+      - title: "OpenBMC Guide"
+        desc: "Comprehensive OpenBMC development — D-Bus, sensors, IPMI, Redfish, and platform porting."
+        url: "/openbmc-guide-tutorial/"
+      - title: "Zephyr RTOS Guide"
+        desc: "Zephyr RTOS programming from beginner to professional — threads, drivers, Bluetooth, and networking."
+        url: "/zephyr-guide-tutorial/"
+      - title: "UEFI Guide"
+        desc: "UEFI firmware development — DXE drivers, protocols, SMM, and ARM platform porting."
+        url: "/uefi-guide-tutorial/"
+      - title: "Linux Driver Guide"
+        desc: "Linux kernel driver development — character devices, I2C, SPI, USB, PCIe, and debugging."
+        url: "/linux-driver-guide-tutorial/"
+      - title: "OpenPRoT Guide"
+        desc: "Open Platform Root of Trust — MCTP, SPDM, PLDM protocols and firmware security."
+        url: "/openprot-guide/"
+  - category: "Programming & Patterns"
+    items:
+      - title: "Rust Guide"
+        desc: "Rust programming from basics to systems-level — ownership, concurrency, FFI, and bare metal."
+        url: "/rust-guide-tutorial/"
+      - title: "Design Patterns"
+        desc: "Gang of Four patterns with UML diagrams and code examples in C#, Delphi, and C++."
+        url: "/design-pattern-docs/"
+  - category: "Security & Finance"
+    items:
+      - title: "PQC Engineering Guide"
+        desc: "Post-quantum cryptography for engineers — NIST algorithms, migration roadmap, and library selection."
+        url: "/pqc-engineering-guide/"
+      - title: "Puffin: Algo Trading"
+        desc: "Algorithmic trading guide — market foundations through ML, deep learning, and AI-assisted trading."
+        url: "/puffin/"
+projects:
+  - title: "STM32 WINUSB"
+    desc: "USB CDC to WINUSB conversion for STM32 microcontrollers."
+    url: "https://github.com/MichaelTien8901/STM32WINUSB"
+  - title: "VBoxVmService"
+    desc: "Run VirtualBox VMs as a Windows service."
+    url: "https://github.com/MichaelTien8901/VBoxVmService"
+  - title: "E-Paper Business Card"
+    desc: "E-ink electronic business card application."
+    url: "https://github.com/MichaelTien8901/epaper-businesscard"
+  - title: "JmpBldrDemo"
+    desc: "Bootloader demonstration project."
+    url: "https://github.com/MichaelTien8901/JmpBldrDemo"
+  - title: "OpenBMC Learning Platform"
+    desc: "Web-based LMS for OpenBMC education."
+    url: "https://github.com/MichaelTien8901/openbmc-learning-platform"
+  - title: "ASCII Chart Formatter"
+    desc: "Fix misaligned edges in ASCII-art diagrams from LLM output."
+    url: "https://github.com/MichaelTien8901/ascii-chart-formatter"
 ---
