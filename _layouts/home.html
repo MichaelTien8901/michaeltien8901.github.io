@@ -8,26 +8,35 @@ layout: default
   <section class="hero">
     <h1 class="hero-title">{{ site.title | escape }}</h1>
     <p class="hero-tagline">{{ site.description | escape }}</p>
+    {%- if site.hero_links -%}
     <div class="hero-links">
-      <a href="https://github.com/{{ site.github_username }}" class="hero-btn">
+      {%- for link in site.hero_links -%}
+      <a href="{{ link.url }}" class="hero-btn">
+        {%- if link.icon == "github" -%}
         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-      <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="hero-btn">
+        {%- elsif link.icon == "linkedin" -%}
         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.6 1H2.4C1.6 1 1 1.6 1 2.4v11.2c0 .8.6 1.4 1.4 1.4h11.2c.8 0 1.4-.6 1.4-1.4V2.4c0-.8-.6-1.4-1.4-1.4zM5.3 13H3.1V6.5h2.2V13zM4.2 5.6c-.7 0-1.3-.6-1.3-1.3s.6-1.3 1.3-1.3 1.3.6 1.3 1.3-.6 1.3-1.3 1.3zM13 13h-2.2V9.9c0-.7 0-1.7-1-1.7s-1.2.8-1.2 1.6V13H6.4V6.5h2.1v.9c.3-.6 1-1 2-1 2.1 0 2.5 1.4 2.5 3.2V13z"/></svg>
-        LinkedIn
-      </a>
-      <a href="mailto:{{ site.email }}" class="hero-btn">
+        {%- elsif link.icon == "email" -%}
         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2 3h12c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1zm0 1v.217l6 3.6 6-3.6V4H2zm0 1.383V12h12V5.383L8 8.983 2 5.383z"/></svg>
-        Email
+        {%- elsif link.icon == "twitter" -%}
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
+        {%- elsif link.icon == "youtube" -%}
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M15.84 4.93a2.01 2.01 0 0 0-1.41-1.41C13.2 3.16 8 3.16 8 3.16s-5.2 0-6.43.36A2.01 2.01 0 0 0 .16 4.93 20.6 20.6 0 0 0 0 8a20.6 20.6 0 0 0 .16 3.07 2.01 2.01 0 0 0 1.41 1.41C2.8 12.84 8 12.84 8 12.84s5.2 0 6.43-.36a2.01 2.01 0 0 0 1.41-1.41A20.6 20.6 0 0 0 16 8a20.6 20.6 0 0 0-.16-3.07zM6.4 10.2V5.8L10.56 8 6.4 10.2z"/></svg>
+        {%- elsif link.icon == "rss" -%}
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-1-5a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1zm0-4a1 1 0 0 1 1-1 10 10 0 0 1 10 10 1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1z"/></svg>
+        {%- endif -%}
+        {{ link.label }}
       </a>
+      {%- endfor -%}
     </div>
+    {%- endif -%}
   </section>
 
   {{ content }}
 
   <!-- Technical Guides Section -->
-  {%- if page.guides -%}
+  {%- assign show_guides = site.show_sections.guides | default: true -%}
+  {%- if page.guides and show_guides -%}
   <section class="section">
     <h2 class="section-heading">Technical Guides</h2>
     <p class="section-desc">Comprehensive learning resources hosted on GitHub Pages</p>
@@ -47,7 +56,8 @@ layout: default
   {%- endif -%}
 
   <!-- Projects Section -->
-  {%- if page.projects -%}
+  {%- assign show_projects = site.show_sections.projects | default: true -%}
+  {%- if page.projects and show_projects -%}
   <section class="section">
     <h2 class="section-heading">Notable Projects</h2>
     <p class="section-desc">Open-source tools and contributions</p>
@@ -63,7 +73,8 @@ layout: default
   {%- endif -%}
 
   <!-- Recent Blog Posts Section -->
-  {%- if site.posts.size > 0 -%}
+  {%- assign show_blog = site.show_sections.blog_posts | default: true -%}
+  {%- if site.posts.size > 0 and show_blog -%}
   <section class="section">
     <h2 class="section-heading">{{ page.list_title | default: "Recent Posts" }}</h2>
     <ul class="post-list">

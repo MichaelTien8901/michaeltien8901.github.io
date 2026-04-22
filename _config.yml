@@ -32,6 +32,27 @@ linkedin_username: michaeltien8901
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
+# Front page configuration
+# Set any section to false to hide it from the home page
+show_sections:
+  guides: true
+  projects: true
+  blog_posts: true
+
+# Hero links - remove or comment out entries to hide them
+# Supported icons: github, linkedin, email, twitter, youtube, rss
+# Or use icon: custom with a custom_svg field
+hero_links:
+  - label: "GitHub"
+    url: "https://github.com/MichaelTien8901"
+    icon: "github"
+  - label: "LinkedIn"
+    url: "https://linkedin.com/in/michaeltien8901"
+    icon: "linkedin"
+  - label: "Email"
+    url: "mailto:mtien888@gmail.com"
+    icon: "email"
+
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
