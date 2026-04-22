@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:michaeltien8901.github.io)",
+      "Bash(dir:*)",
+      "WebSearch"
+    ]
+  }
+}

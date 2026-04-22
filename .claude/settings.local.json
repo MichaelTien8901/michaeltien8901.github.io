@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo Shell works!:*)",
+      "Bash(gh:*)",
+      "Bash(winget install:*)",
+      "Bash(export:*)",
+      "Bash(git:*)",
+      "Bash(ruby --version 2>/dev/null && bundler --version 2>/dev/null && gem --version 2>/dev/null)",
+      "Bash(where gh:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run:*)",
+      "WebFetch(domain:michaeltien8901.github.io)"
+    ]
+  }
+}
